@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cordova>
+   <access origin="*"/>
+   <log level="ERROR"/>
+   <preference name="useBrowserHistory" value="false" />
+	 <plugins>
+	    <plugin name="Device" value="org.apache.cordova.Device"/>
+	    <plugin name="App" value="org.apache.cordova.App"/>
+	    <plugin name="Device" value="org.apache.cordova.Device"/>
+	    <plugin name="NetworkStatus" value="org.apache.cordova.NetworkManager"/>
+	    <plugin name="Geolocation" value="org.apache.cordova.GeoBroker"/>
+	    <plugin name="GpsDetectionPlugin" value="com.butterflyeffect.plugins.GPSDetectionPlugin"/>
+	</plugins>
+</cordova>

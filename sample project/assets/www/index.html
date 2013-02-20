@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>GPS Detector</title>
+		<script type="text/javascript" charset="utf-8" src="./js/cordova-2.2.0.js"></script>
+		<script type="text/javascript" charset="utf-8" src="./js/gpsDetectionPlugin.js"></script>
+	</head>
+	<body>
+		<h1>GPS Detector</h1>
+		<input type="button" id="check" value="Check GPS state">
+	</body>
+	
+	<script type="text/javascript">
+		document.addEventListener("deviceready", onDeviceReady, false);
+		
+		function onDeviceReady() {
+		
+			gpsDetect = cordova.require('cordova/plugin/gpsDetectionPlugin');
+		
+			var checkButton = document.getElementById("check");
+			
+			checkButton.onclick = function() {
+				gpsDetect.checkGPS(onGPSSuccess, onGPSError);
+			} 
+			
+			function onGPSSuccess(on) {
+				if (on) alert("GPS is enabled");
+				else alert("GPS is disabled");
+			}
+			
+			function onGPSError(e) {
+				alert("Error : "+e);
+			}
+		}
+	</script>
+</html>

@@ -5,17 +5,14 @@ Features
 --------
 
 - Plugin used to detect if the GPS if enabled or disabled on the device
-- Compatible with Cordova 2.2.0 (older versions not tested)
+- Compatible with Cordova 2.2.0 to 3.1.0 (older and newer versions not tested)
+- Tested (and working) on Android 4.4 KitKat (Nexus 5)
 
 Setup
 -----
 
 - Create a package called `com.butterflyeffect.plugins` within your project's src folder and copy `GPSDetectionPlugin.java` file into that new package.
 
-- Add a plugin line to `res/xml/config.xml` :
-
-    `<plugin name="GpsDetectionPlugin" value="com.butterflyeffect.plugins.GPSDetectionPlugin"/>`
-    
 - Copy `gpsDetectionPlugin.js` from `assets/www/js` to the appropriate location in your project (e.g. `assets/www/js`)
   and include it in your HTML file after the Cordova script
   
@@ -26,6 +23,23 @@ Setup
 	`<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />`
 	
 - Refresh your Android project
+
+
+
+For Phonegap >= 3.0 :
+
+- Add a feature line to `res/xml/config.xml` :
+
+    `<feature name="GpsDetectionPlugin">
+			<param name="android-package" value="com.butterflyeffect.plugins.GPSDetectionPlugin" />
+    </feature>`
+
+For Phonegap < 3.0 :
+
+- Add a plugin line to `res/xml/config.xml` :
+
+    `<plugin name="GpsDetectionPlugin" value="com.butterflyeffect.plugins.GPSDetectionPlugin"/>`
+    
 
 Usage
 -----
@@ -57,4 +71,4 @@ Use the plugin like so:
 		}
 	</script>
 
-See also the sample project in the repository.
+See also the sample project (PhoneGap 3.1) in the repository.

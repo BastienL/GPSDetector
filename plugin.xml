@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.butterflyeffect.plugins.GPSDetectionPlugin"
+    version="1.0.0">
+    <name>GPSDetector</name>
+    <platform name="android">
+      <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="GPSDetector">
+          <param name="android-package" value="com.butterflyeffect.plugins.GPSDetectionPlugin"/>
+        </feature>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/*">
+        <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+      </config-file>
+
+      <source-file src="src/com/butterflyeffect/plugins/GPSDetectionPlugin.java" target-dir="src/com/butterflyeffect/plugins" />
+
+      <js-module src="www/GPSDetector.js" name="GPSDetector">
+        <clobbers target="GPSDetector" />
+      </js-module>
+    </platform>
+</plugin>

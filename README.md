@@ -5,6 +5,9 @@ Features
 --------
 
 - PhoneGap plugin used to detect if the GPS if enabled or disabled on the device
+- Compatible with Cordova 2.2.0 to 3.1.0 (older and newer versions not tested)
+- Tested (and working) on Android 4.4 KitKat (Nexus 5)
+
 
 Setup
 -----
@@ -16,7 +19,6 @@ Usage
 
 Use the plugin like so:
 
-    <script type="text/javascript" charset="utf-8" src="./js/gpsDetectionPlugin.js"></script>
     <script type="text/javascript">
 		document.addEventListener("deviceready", onDeviceReady, false);
 		

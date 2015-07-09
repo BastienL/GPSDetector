@@ -5,8 +5,10 @@ Features
 --------
 
 - PhoneGap plugin used to detect if the GPS if enabled or disabled on the device
+- PhoneGap plugin used to open Location Settings and activate them manually
 - Compatible with Cordova 2.2.0 to 3.1.0 (older and newer versions not tested)
 - Tested (and working) on Android 4.4 KitKat (Nexus 5)
+
 
 Setup
 -----

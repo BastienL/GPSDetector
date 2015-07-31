@@ -4,8 +4,7 @@ GPSDetector
 Features
 --------
 
-- PhoneGap plugin used to detect if the GPS if enabled or disabled on the device
-- PhoneGap plugin used to open Location Settings and activate them manually
+- PhoneGap plugin used to detect if the GPS if enabled or disabled on the device, and able to open Location Settings and activate them manually
 - Compatible with Cordova 2.2.0 to 3.1.0 (older and newer versions not tested)
 - Tested (and working) on Android 4.4 KitKat (Nexus 5)
 
@@ -68,6 +67,20 @@ Use the plugin like so:
 			}
 			
 			function onGPSError(e) {
+				alert("Error : "+e);
+			}
+			
+			var openSettingsButton = document.getElementById("openSettings");
+
+			openSettingsButton.onclick = function() {
+				gpsDetect.switchToLocationSettings(onSwitchToLocationSettingsSuccess, onSwitchToLocationSettingsError);
+			}
+
+			function onSwitchToLocationSettingsSuccess() {
+
+			}
+
+			function onSwitchToLocationSettingsError(e) {
 				alert("Error : "+e);
 			}
 		}

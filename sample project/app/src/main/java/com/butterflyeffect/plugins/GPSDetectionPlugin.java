@@ -12,18 +12,18 @@ import android.content.Intent;
 
 public class GPSDetectionPlugin extends CordovaPlugin {
 
-    @Override
+	@Override
     public boolean execute(String action, final JSONArray args, CallbackContext callbackContext) {
 
-        PluginResult result = null;
+    	PluginResult result = null;
         boolean gpsEnabled = false;
         String GPSDetectionAction = "gpsDetection";
         String GPSActivation = "gpsActivation";
 
         if (action.equals(GPSDetectionAction)) {
-            android.content.ContentResolver contentResolver = cordova.getActivity().getApplicationContext().getContentResolver();
-            gpsEnabled = Settings.Secure.isLocationProviderEnabled(contentResolver, LocationManager.GPS_PROVIDER);
-            result = new PluginResult(Status.OK, gpsEnabled);
+        	android.content.ContentResolver contentResolver = cordova.getActivity().getApplicationContext().getContentResolver();
+        	gpsEnabled = Settings.Secure.isLocationProviderEnabled(contentResolver, LocationManager.GPS_PROVIDER);
+        	result = new PluginResult(Status.OK, gpsEnabled);
         }
         else if(action.equals(GPSActivation)) {
             Intent settingsIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);

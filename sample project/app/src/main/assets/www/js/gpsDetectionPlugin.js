@@ -6,9 +6,9 @@ cordova.define('cordova/plugin/gpsDetectionPlugin', function(require, exports, m
     gpsDetect.prototype.checkGPS = function(successCallback, failureCallback) {
     	exec(successCallback, failureCallback, 'GpsDetectionPlugin', 'gpsDetection', []);
     };
-
-    gpsDetect.prototype.switchToLocationSettings = function() {
-        exec(null,null,'GpsDetectionPlugin','gpsActivation',[]);
+    
+    gpsDetect.prototype.switchToLocationSettings = function(successCallback, failureCallback) {
+        exec(successCallback, failureCallback, 'GpsDetectionPlugin', 'gpsActivation', []);
     };
     
     var gpsDetect = new gpsDetect();
